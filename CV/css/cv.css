@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'lato', 'Microsoft Yahei', sans-serif;
-    font-size: 22px;
+    font-size: 18px;
 
     height: 100%;
 
@@ -23,33 +23,152 @@ body {
     /*overflow: hidden;*/
 }
 
+h1 {
+    font-size: 55px;
+
+    margin: 40px 0;
+
+    letter-spacing: 10px;
+}
+
+h2 {
+    font-size: 36px;
+
+    margin: 18px 0;
+}
+
+a {
+    padding-bottom: 2px;
+
+    transition: color 1s linear, border-bottom 1s linear;
+    text-decoration: none;
+
+    color: #4d4d4d;
+    border-bottom: 2px solid transparent;
+}
+
+a:hover {
+    color: #aaa;
+    border-bottom: 2px solid #aaa;
+}
+
 .page {
     display: flex;
+    flex-direction: column;
 
     height: 100%;
-    padding: 40px;
+    padding: 50px;
+
+    align-items: center;
+}
+
+.page1 {
+    flex-direction: row;
 
     text-align: center;
 
     justify-content: center;
-    align-items: center;
-}
-
-.cell {
-    margin-top: -50px;
 }
 
 #avatar {
+    display: inline-block;
+
+    width: 150px;
+    height: 150px;
+
     border-radius: 50%;
-}
-
-#name {
-    font-size: 50px;
-
-    letter-spacing: 10px;
-    margin: 40px 0;
+    background: url(../images/avatar.png) center center no-repeat;
 }
 
 #job {
+    font-size: 22px;
+
     margin-bottom: 30px;
+}
+
+.page2 {
+    padding-bottom: 100px;
+}
+
+.page2 .row {
+    display: flex;
+
+    width: 100%;
+    max-width: 960px;
+
+    flex: 1;
+}
+
+.page2 .cell {
+    display: flex;
+
+    flex: 1;
+    align-items: center;
+}
+
+.page2 .icon {
+    display: flex;
+
+    justify-content: center;
+    flex: 1;
+}
+
+.page2 .icon a {
+    display: block;
+
+    width: 100px;
+    height: 100px;
+    padding-bottom: 0;
+
+    border-bottom: none;
+    border-radius: 50%;
+    background: #dadada url(../images/repository.png) center center no-repeat;
+}
+
+.page2 .info {
+    flex: 2;
+}
+
+.info h3 {
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.info p {
+    line-height: 24px;
+}
+
+#github {
+    font-family: Helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 26px;
+
+    width: 160px;
+    margin-top: 20px;
+    padding: 0 10px;
+
+    color: #333;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #fcfcfc, #eee);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
+}
+
+#github:hover {
+    border-color: #ccc;
+    background: linear-gradient(to bottom, #eee, #ddd);
+}
+
+#github:active {
+    border-color: #b5b5b5;
+    background-color: #dcdcdc;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15);
+}
+
+#github img {
+    float: left;
+
+    margin: 3px 5px 3px 0;
 }
