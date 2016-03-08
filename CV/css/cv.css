@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../font/Lato-Regular.woff2') format('woff2'),
+         url('../font/Lato-Regular.woff') format('woff'),
+         url('../font/Lato-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    font-family: 'lato', 'Microsoft Yahei', sans-serif;
+}
+
