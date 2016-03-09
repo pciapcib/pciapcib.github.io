@@ -8,15 +8,65 @@
     url('../font/Lato-Regular.ttf') format('truetype');
 }
 
-html {
+@font-face {
+    font-family: 'iconfont';
+
+    src: url('../font/iconfont/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont/iconfont.woff') format('woff'), /* chrome, firefox */
+    url('../font/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: 'iconfont' !important;
+    font-size: 16px;
+    font-style: normal;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-zoom:before {
+    content: '\e600';
+}
+.icon-browser:before {
+    content: '\e601';
+}
+.icon-clock:before {
+    content: '\e602';
+}
+.icon-email:before {
+    content: '\e603';
+}
+.icon-iphone:before {
+    content: '\e604';
+}
+.icon-book:before {
+    content: '\e605';
+}
+.icon-github:before {
+    content: '\e606';
+}
+.icon-folder:before {
+    content: '\e607';
+}
+
+.page5 .iconfont {
+    font-size: 30px;
+
+    margin-right: 10px;
+}
+
+html,
+body,
+.page {
     height: 100%;
 }
 
 body {
     font-family: 'lato', 'Microsoft Yahei', sans-serif;
     font-size: 18px;
-
-    height: 100%;
 
     color: #4d4d4d;
     background-color: #f2f2f2;
@@ -60,35 +110,40 @@ a:hover {
     display: flex;
     flex-direction: column;
 
-    height: 100%;
     padding: 100px 50px;
 
     align-items: center;
 }
 
-.row {
+.row,
+.col {
     display: flex;
 
+    flex: 1;
+    align-items: center;
+}
+
+.row {
     width: 100%;
     max-width: 960px;
-
-    flex: 1;
-    align-items: center;
 }
 
-.cell {
+.col {
+    flex-direction: column;
+}
+
+.row .cell,
+.col .cell {
     display: flex;
 
     flex: 1;
     align-items: center;
 }
 
-.page1 {
-    text-align: center;
-}
-
-.page1 .cell {
+.col .cell {
     flex-direction: column;
+
+    justify-content: center;
 }
 
 #avatar {
@@ -101,7 +156,7 @@ a:hover {
     background: url(../images/avatar.png) center center no-repeat;
 }
 
-#job {
+.page1 p {
     font-size: 22px;
 
     margin-bottom: 30px;
@@ -142,15 +197,26 @@ a:hover {
     font-weight: bold;
     line-height: 26px;
 
-    width: 160px;
     margin-top: 10px;
     padding: 0 10px;
 
     color: #333;
     border: 1px solid #d5d5d5;
     border-radius: 3px;
-    background: linear-gradient(to bottom, #fcfcfc, #eee);
+    background: linear-gradient(to bottom, #fcfcfc, #ddd);
     text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
+}
+
+#github i {
+    display: inline-block;
+    float: left;
+
+    width: 20px;
+    height: 20px;
+    margin: 3px 5px 3px 0;
+
+    background: url(../images/GitHub.png) center center no-repeat;
+    background-size: 20px 20px;
 }
 
 #github:hover {
@@ -164,47 +230,45 @@ a:hover {
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15);
 }
 
-#github img {
-    float: left;
-
-    margin: 3px 5px 3px 0;
-}
-
-.page3 .row:first-of-type {
-    align-items: flex-end;
-}
-
-.page3 .row:last-of-type {
-    align-items: flex-start;
-}
-
-.page3 .cell {
-    justify-content: center;
-    align-items: baseline;
+.page3 p {
+    margin-bottom: 25px;
 }
 
 .page3 span {
     margin: 0 3px;
 }
 
-.lv3 {
-    font-size: 24px;
+.lv5 {
+    font-size: 38px;
 }
 
 .lv4 {
     font-size: 32px;
 }
 
-.lv5 {
-    font-size: 38px;
+.lv3 {
+    font-size: 24px;
 }
 
-.page4 .cell {
-    flex-direction: column;
+.lv3c {
+    font-size: 22px;
 }
 
 .page4 p {
     font-size: 20px;
 
     margin-top: 25px;
+}
+
+.page5 .cell {
+    align-items: flex-start;
+}
+
+.page5 p {
+    font-size: 22px;
+
+    margin-top: 15px;
+    vertical-align: middle;
+    height: 30px;
+    line-height: 30px;
 }
