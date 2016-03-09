@@ -37,6 +37,10 @@ h2 {
     margin: 18px 0;
 }
 
+h3 {
+    font-size: 22px;
+}
+
 a {
     padding-bottom: 2px;
 
@@ -57,17 +61,34 @@ a:hover {
     flex-direction: column;
 
     height: 100%;
-    padding: 50px;
+    padding: 100px 50px;
 
     align-items: center;
 }
 
+.row {
+    display: flex;
+
+    width: 100%;
+    max-width: 960px;
+
+    flex: 1;
+    align-items: center;
+}
+
+.cell {
+    display: flex;
+
+    flex: 1;
+    align-items: center;
+}
+
 .page1 {
-    flex-direction: row;
-
     text-align: center;
+}
 
-    justify-content: center;
+.page1 .cell {
+    flex-direction: column;
 }
 
 #avatar {
@@ -84,26 +105,6 @@ a:hover {
     font-size: 22px;
 
     margin-bottom: 30px;
-}
-
-.page2 {
-    padding-bottom: 100px;
-}
-
-.page2 .row {
-    display: flex;
-
-    width: 100%;
-    max-width: 960px;
-
-    flex: 1;
-}
-
-.page2 .cell {
-    display: flex;
-
-    flex: 1;
-    align-items: center;
 }
 
 .page2 .icon {
@@ -129,14 +130,10 @@ a:hover {
     flex: 2;
 }
 
-.info h3 {
-    font-size: 22px;
-
-    margin-bottom: 15px;
-}
-
 .info p {
     line-height: 24px;
+
+    margin-top: 15px;
 }
 
 #github {
@@ -146,7 +143,7 @@ a:hover {
     line-height: 26px;
 
     width: 160px;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 0 10px;
 
     color: #333;
@@ -171,4 +168,43 @@ a:hover {
     float: left;
 
     margin: 3px 5px 3px 0;
+}
+
+.page3 .row:first-of-type {
+    align-items: flex-end;
+}
+
+.page3 .row:last-of-type {
+    align-items: flex-start;
+}
+
+.page3 .cell {
+    justify-content: center;
+    align-items: baseline;
+}
+
+.page3 span {
+    margin: 0 3px;
+}
+
+.lv3 {
+    font-size: 24px;
+}
+
+.lv4 {
+    font-size: 32px;
+}
+
+.lv5 {
+    font-size: 38px;
+}
+
+.page4 .cell {
+    flex-direction: column;
+}
+
+.page4 p {
+    font-size: 20px;
+
+    margin-top: 25px;
 }
