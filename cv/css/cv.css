@@ -49,17 +49,28 @@ body,
     height: 100%;
 }
 
+.page {
+    height: 20%;
+}
+
 body {
     font-family: 'Lato', 'Microsoft Yahei', sans-serif;
     font-size: 18px;
 
     color: #4d4d4d;
     background-color: #f2f2f2;
-    /*overflow: hidden;*/
+    overflow: hidden;
+}
+
+#wrap {
+    position: absolute;
+    height: 500%;
+    top: 0;
+    width: 100%;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 2.7em;
 
     margin: 40px 0;
 
@@ -67,13 +78,13 @@ h1 {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 2em;
 
     margin: 18px 0;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 1.2em;
 }
 
 a {
@@ -95,7 +106,7 @@ a:hover {
     display: flex;
     flex-direction: column;
 
-    padding: 100px 50px;
+    padding: 10% 50px;
 
     align-items: center;
 }
@@ -141,7 +152,7 @@ a:hover {
 }
 
 .page1 p {
-    font-size: 22px;
+    font-size: 1.2em;
 
     margin-bottom: 30px;
 }
@@ -233,23 +244,23 @@ a:hover {
 }
 
 .lv5 {
-    font-size: 38px;
+    font-size: 2.2em;
 }
 
 .lv4 {
-    font-size: 32px;
+    font-size: 1.8em;
 }
 
 .lv3 {
-    font-size: 24px;
+    font-size: 1.4em;
 }
 
 .lv3c {
-    font-size: 22px;
+    font-size: 1.2em;
 }
 
 .page4 p {
-    font-size: 20px;
+    font-size: 1.1em;
 
     margin-top: 25px;
 }
@@ -272,23 +283,49 @@ a:hover {
     border-bottom: none;
 }
 
-.page5 .info {
-    font-size: 22px;
-
-    display: inline-block;
-}
-
 .page5 .iconfont {
     font-size: 30px;
 
     margin-right: 15px;
 }
 
+.page5 .info {
+    font-size: 1.2em;
+
+    display: inline-block;
+}
+
 #download {
-    font-size: 24px;
+    font-size: 1.4em;
     font-weight: bold;
 
     display: block;
 
     margin: 40px auto 0;
+}
+
+#nav {
+    width: 25px;
+    position: fixed;
+    top: 45%;
+    right: 2.5%;
+}
+
+#nav li{
+    height: 8px;
+    width: 8px;
+    margin: 8px auto;
+    display: block;
+
+}
+
+#nav a{
+    border: 1px solid #4d4d4d;
+    display: block;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#nav .active {
+    background-color: #4d4d4d;
 }
