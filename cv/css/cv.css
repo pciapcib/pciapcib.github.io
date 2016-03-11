@@ -341,7 +341,7 @@ a:hover {
 /*移动端*/
 
 /* iPad */
-@media screen and (min-width: 451px) and (max-width: 769px) {
+@media screen and (min-width: 450px) and (max-width: 768px) and (min-height: 1024px) {
     body {
         font-size: 24px;
     }
@@ -458,5 +458,27 @@ a:hover {
 
     #github {
         transform: scale(.9,.9);
+    }
+}
+
+/*桌面端窄屏幕*/
+
+@media screen and (max-width: 720px) and (min-height: 640px) {
+    .page2 {
+        padding: 10% 0;
+    }
+
+    .page2 .row {
+        flex-direction: column;
+
+        padding-right: 8%;
+    }
+
+    .page2 .row .cell {
+        width: 100%;
+    }
+
+    #github {
+        transform: scale(1,1);
     }
 }
