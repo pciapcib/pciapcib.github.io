@@ -1,13 +1,15 @@
 pageNav();
 
 function pageNav() {
-    var $navBtn = $('#nav a');
-    var index = 0;
+    var $navBtn = $('#nav a'),
+        index = 0,
+        $wrap = $('#wrap'),
+        pageHeight,
+        pageNum = $('section').eq(this.length - 1).attr('class').substr(-1);
 
-    var $wrap = $('#wrap');
-    var pageHeight = $(window).height();
+    resize();
 
-    var pageNum = $('section').eq(this.length - 1).attr('class').substr(-1);
+    window.onresize = resize;
 
     $navBtn.click(function() {
         index = $navBtn.index(this);
@@ -22,6 +24,13 @@ function pageNav() {
     document.onkeydown = eventScroll;
 
     touchEvent();
+
+    function resize() {
+        pageHeight = $(window).height();
+        $('body').css('height', pageHeight);
+        pageScroll(index);
+    }
+
 
     function touchEvent() {
         var y1, y2;
