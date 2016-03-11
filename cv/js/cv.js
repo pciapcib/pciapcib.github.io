@@ -3,12 +3,17 @@ pageNav();
 function pageNav() {
     var $navBtn = $('#nav a');
     var index = 0;
+
     var $wrap = $('#wrap');
-    var pageHeight = -$(window).height();
+    var pageHeight = $(window).height();
+
+    var pageNum = $('section').eq(this.length - 1).attr('class').substr(-1);
 
     $navBtn.click(function() {
         index = $navBtn.index(this);
+
         pageScroll(index);
+
         return false;
     });
 
@@ -30,35 +35,64 @@ function pageNav() {
         });
 
         document.addEventListener("touchend", function() {
-            var y = y1 - y2;
-            eventScroll(y);
+            eventScroll(y1 - y2);
         });
     }
 
-    function eventScroll(event) {
-        var direction = -event.wheelDeltaY || (event.keyCode - 39) || event;
+    function eventScroll(e) {
+        if ($wrap.is(':animated')) {
+            return;
+        }
 
-        if (index === 0 && direction < 0) {
+        var direction;
+
+        if (e.wheelDeltaY) {
+            if (e.wheelDeltaY > 0) {
+                direction = "up";
+            } else {
+                direction = "down";
+            }
+        }
+
+        if (e.keyCode) {
+            if (e.keyCode == 38) {
+                direction = "up";
+            } else if (e.keyCode == 40) {
+                direction = "down";
+            }
+        }
+
+        if (typeof e === "number") {
+            if (e < 0) {
+                direction = "up";
+            } else {
+                direction = "down";
+            }
+        }
+
+        if (index === 0 && direction == "up") {
             index = 0;
         } else {
-            if (direction < 0) {
+            if (direction == "up") {
                 index--;
-            } else if (direction > 0) {
+            } else if (direction == "down") {
                 index++;
             }
 
-            if (index == 5) {
+            if (index == pageNum) {
                 index = 0;
             }
         }
 
         pageScroll(index);
-
     }
 
     function pageScroll(index) {
         $navBtn.removeClass('active')
             .eq(index).addClass('active');
-        $wrap.css('top', index * pageHeight);
+
+        $wrap.stop(true, false).animate({
+            top: -index * pageHeight
+        }, 900);
     }
 }
