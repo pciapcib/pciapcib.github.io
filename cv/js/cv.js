@@ -3,9 +3,11 @@ pageNav();
 function pageNav() {
     var $navBtn = $('#nav a'),
         index = 0,
-        $wrap = $('#wrap'),
+        $body = $('body'),
         pageHeight,
-        pageNum = $('section').eq(this.length - 1).attr('class').substr(-1);
+        pageNum = $('section').eq(this.length - 1).attr('id').substr(-1);
+
+    $navBtn.eq(0).addClass('active');
 
     resize();
 
@@ -31,25 +33,29 @@ function pageNav() {
         pageScroll(index);
     }
 
-
     function touchEvent() {
-        var y1, y2;
+        var y1, y2,
+            t, t1, t2;
 
         document.addEventListener("touchstart", function(e) {
-            y1 = e.touches[0].pageY;
+            y1 = e.targetTouches[0].pageY;
+            t = new Date();
+            t1 = t.getTime();
         });
 
         document.addEventListener("touchmove", function(e) {
-            y2 = e.touches[0].pageY;
+            y2 = e.targetTouches[0].pageY;
         });
 
         document.addEventListener("touchend", function() {
-            eventScroll(y1 - y2);
+            t = new Date();
+            t2 = t.getTime();
+            eventScroll(y1 - y2, t2 - t1);
         });
     }
 
-    function eventScroll(e) {
-        if ($wrap.is(':animated')) {
+    function eventScroll(e, t) {
+        if ($body.is(':animated')) {
             return;
         }
 
@@ -97,11 +103,13 @@ function pageNav() {
     }
 
     function pageScroll(index) {
+        var href = $navBtn.eq(index).attr("href");
+
         $navBtn.removeClass('active')
             .eq(index).addClass('active');
 
-        $wrap.stop(true, false).animate({
-            top: -index * pageHeight
+        $body.stop(true, false).animate({
+            scrollTop: $(href).offset().top + "px"
         }, 900);
     }
 }
