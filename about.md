@@ -1,6 +1,7 @@
 ---
 layout: post
 title: About
+date: 2016-03-14
 permalink: /about/
 ---
 
