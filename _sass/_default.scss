@@ -353,4 +353,13 @@ strong {
     .pagination {
         text-align: center;
     }
+
+    .post-teaser__date {
+        border-bottom: none;
+
+        &:hover {
+            color: $cloudy;
+            border-bottom: none;
+        }
+    }
 }
