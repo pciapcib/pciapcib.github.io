@@ -28,7 +28,7 @@ a {
 }
 
 p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 32px;
 }
 
@@ -257,7 +257,11 @@ strong {
 }
 
 /* =hyperlink */
-.content a, #page-404 a, .menu a, .post-teaser__date, .pagination a {
+.content a,
+#page-404 a,
+.menu a,
+.post-teaser__date,
+.pagination a {
     transition: color .8s linear, border-bottom .8s linear;
     border-bottom: 2px solid transparent;
 
@@ -271,7 +275,8 @@ strong {
     font-weight: 700;
 }
 
-.pagination span, .pagination a {
+.pagination span,
+.pagination a {
     margin-right: 15px;
 }
 
@@ -279,7 +284,10 @@ strong {
     margin-right: 0;
 }
 
-/* =404 page */
+#markdown-toc {
+    padding-left: 15px;
+}
+
 #page-404 {
     text-align: center;
 }
