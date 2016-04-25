@@ -13,13 +13,19 @@ permalink: /demo/
 
 地址: [shenting.me/cv]({{ site.url }}/cv)
 
-### 2. [jZoom](https://github.com/{{ site.author.github }}/jZoom)
+### 2. [白湯](http://219.83.163.204)
+
+推送随机文章的简约阅读网站，负责完成前端部分。
+
+地址: [219.83.163.204](http://219.83.163.204)
+
+### 3. [jZoom](https://github.com/{{ site.author.github }}/jZoom)
 
 一个拥有放大镜效果的jQuery插件，轻量级、易于使用。
 
 地址: [shenting.me/jZoom/demo]({{ site.url }}/jZoom/demo)
 
-### 3. [cClock](https://github.com/{{ site.author.github }}/cClock)
+### 4. [cClock](https://github.com/{{ site.author.github }}/cClock)
 
 基于Canvas的可自定义扁平化动态时钟。
 

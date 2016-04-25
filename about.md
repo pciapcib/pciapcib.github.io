@@ -15,6 +15,8 @@ permalink: /about/
 
 ### 联系方式
 
+* 个人简历: [shenting.me/cv]({{ site.url }}/cv)
+
 * E-mail: [pciapcib@163.com](mailto:{{ site.author.email }})
 
 * Blog: [shenting.me]({{ site.url }})
